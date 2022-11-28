@@ -9,7 +9,6 @@ import { Card } from 'react-native-paper';
 import { auth } from './firebase';
 import { useNavigation } from '@react-navigation/native';
 import { Camera } from 'expo-camera';
-
 const FadeInView = (props) => {
   
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -71,11 +70,13 @@ export default function App({ navigation }) {
       <Separar />
       
       <MyButton
-        title="Listagem de alunos"
+        title="Cadastrar aluno"
         color="red"
         navigation={navigation}
-        destino=""
+        destino="CreateAlunos"
       />
+
+
       <Separar />
      <TouchableOpacity
      onPress={handleSignOut}
@@ -111,7 +112,7 @@ buttonOutLine: {
     marginTop: 5,
     borderColor: '#00cc00',
     borderWidth:2,
-},
+}, 
 buttonText: {
     color:'white',
     fontWeight: '700',

@@ -8,7 +8,7 @@ export default function AssetExample() {
     
       <Image style={styles.logo} source={require('../assets/GranbIcon.png')} />
       <Text style={Fonts.FontType}>   Olá {auth.currentUser?.email}</Text>
-      <Text style={Fonts.FontType}>   Selecione o App Desejado</Text>
+      <Text style={Fonts.FontType}>   Seja bem vindo</Text>
     </View>
   );
 }

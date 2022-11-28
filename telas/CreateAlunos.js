@@ -1,7 +1,9 @@
 import react, { useState } from "react";
 import { View, TextInput, Button, ScrollView, StyleSheet } from "react-native-web";
 
-import { collection, addDoc, doc, setDoc } from "firebase/firestore";
+import { db,collection, addDoc, doc, setDoc, getDocs } from "firebase/firestore";
+
+
 const CreateAlunos = ()  => {
     const [state, setState] = useState({
         name: '',
@@ -14,10 +16,10 @@ const CreateAlunos = ()  => {
         if (state.name ==='') {
             alert('O campo NOME é obrigatório')
         } else {
-           await addDoc(doc(alunos),{
+           await addDoc(collection(db,"alunos"),{
                 name: state.name,
                 email: state.email,
-                phone: state.phone
+                phone: state.phone,
             })
             alert('Salvo com sucesso!')
         }
